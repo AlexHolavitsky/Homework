@@ -29,8 +29,6 @@ console.log(strings.join('\n'));
 
 
 
-
-
 console.log(typeof undefined); // "undefined"
 console.log(typeof 123); // "number"
 console.log(typeof 'Hello'); // "string"
