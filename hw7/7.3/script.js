@@ -7,7 +7,7 @@
 
 function promptLoop() {
     let lastInput = null;
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 10; i++) {
         let userInput = prompt("Введіть число більше 100:");
 
         // Перевірка, чи введено число
