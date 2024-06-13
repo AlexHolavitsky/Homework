@@ -24,7 +24,7 @@ function promptLoop() {
         } else {
             lastInput = userInput;
             continue; // Продовжити отримувати дані
-        }
+        } 
 
        
     }
