@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getRandomImage() {
         const randomIndex = Math.floor(Math.random() * imageCount) + 1;
-        return `images/${randomIndex}.jpg`;
+        return `../11.3/images/${randomIndex}.jpg`;
     }
 
     function showRandomImage() {
