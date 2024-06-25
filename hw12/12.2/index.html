@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <title>Hi</title>
+    <style>
+        nav{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            padding: 10px;
+            border: 1px black solid;
+            gap:20px
+        }
+     
+    </style>
+</head>
+
+<body>
+  
+    <nav id="block">
+        <button class="btn_1">Кнопка 1</button>
+        <button class="btn_2">Кнопка 2</button>
+        <button class="btn_3">Кнопка 3</button>
+    </nav>
+
+    <script>
+        // ДЗ 12.2. Використання подій
+        // Створіть HTML-сторінку з декількома кнопками. Ваше завдання -
+        //  створити обробник подій для батьківського елементу, який відслідковуватиме кліки на всіх кнопках.
+        // Покроковий план:
+        // 1. Створіть HTML-елементи: батьківський контейнер з декількома вкладеними кнопками.
+        // 2. Додайте обробник подій до батьківського контейнера, який відслідковуватиме кліки.
+        // 3. Після кліку на будь-якій кнопці, виведіть повідомлення про те, яка саме кнопка була клікнута.
+        const block = document.getElementById('block');
+
+        block.addEventListener('click', function (event) {
+            if (event.target.tagName === "BUTTON"){
+                const buttonText = event.target.textContent;
+                console.log(`Клікнуто на кнопці: ${buttonText}`);
+                 alert(`Клікнуто на кнопці: ${buttonText}`);
+            };
+        });
+
+       
+
+
+    </script>
+</body>
+
+</html>

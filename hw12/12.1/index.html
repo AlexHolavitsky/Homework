@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ДЗ 12.1. Переход на сторінку</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+</head>
+
+<body>
+    <button id="getLink"> Push to put your link </button>
+    <button id="openLink"> Open Link </button>
+
+    <script>
+        // ДЗ 12.1. Переход на сторінку
+        // На сторінці є дві кнопки. При натисканні на першу кнопку користувач повинен ввести в prompt посилання,
+        //  при натисканні на другу – переадресовується на інший сайт (за раніше введеним посиланням).
+
+        const getLink = document.getElementById('getLink');
+        const openLink = document.getElementById('openLink');
+
+        getLink.addEventListener('click', function () {         
+                const link= prompt('Please enter a link:');
+                if (link) {
+                savedLink = link;               
+            } else {
+                alert('No link entered.');
+            }
+            console.log(savedLink)
+        });
+
+            openLink.addEventListener('click', function (event) {         
+                if (savedLink) {
+                window.location.href = savedLink;
+            } else {
+                alert('No link saved. Please enter a link first.');
+            }
+               
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+</head>
+<body>
+    <ul id="list">
+
+    </ul>
+<input type="text" id="task" placeholder="Введіть текст тут">
+    <button id="button">Add</button>
+
+    <script>
+// ДЗ 12.3. TODO лист
+// Створіть HTML-сторінку, яка містить список завдань (to-do list)
+//  з можливістю додавання нових завдань. Ваше ціль - використовуючи делегування подій, 
+//  створити обробник подій для списку завдань, який дозволить видаляти завдання при кліку на них.
+
+// Покроковий план:
+
+// Створіть HTML-елементи: список завдань ul, текстове поле для вводу нових завдань та кнопку для додавання.
+// Додайте обробник подій до списку завдань ul, використовуючи делегування.
+// При кліку на будь-якій кнопці видалення, видаліть цей пункт.
+// Додайте можливість вводити нові завдання у текстове поле і додавати їх до списку за допомогою кнопки.
+
+    const listEl = document.getElementById('list');
+    const inputEl = document.getElementById('task');
+    const btnEl = document.getElementById('button');
+    btnEl.addEventListener('click', function () {  
+          const inputValue = inputEl.value;  
+            if (inputValue.length > 0) {    
+                const newTask = document.createElement('li');
+                newTask.innerHTML = `${inputValue} <button class="delete-btn">Delete</button>`;
+                list.appendChild(newTask); 
+            };
+        });
+
+        // Делегування подій для видалення завдань
+        listEl.addEventListener('click', function(event) {
+            if (event.target.classList.contains('delete-btn')) {
+                const listItem = event.target.closest('li');
+                listItem.remove();
+            }
+        });
+       
+    </script>
+</body>
+</html>
