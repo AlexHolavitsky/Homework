@@ -19,7 +19,11 @@ document.getElementById('submit').addEventListener('click', function(event) {
     const name = document.getElementById('name').value.trim();
     const message = document.getElementById('message').value.trim();
     const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const email = document.getElementById('email').value.trim();    
+ 
+    
+    // Отримання значень полів
+    
 
     // Валідація полів
     let isValid = true;
