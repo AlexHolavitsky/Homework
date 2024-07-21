@@ -45,7 +45,7 @@ function renderProducts(products) {
                       <h5 class="card-title">${product.title}</h5>
                       <p class="card-text">${product.description} <p>
                       <p>${product.price} <p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="#" class="btn btn-primary">Buy</a>
                   </div>
               </div>     
           `;
