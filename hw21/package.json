@@ -1,0 +1,24 @@
+{
+  "name": "hw21",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "sass css/style.scss css/style.css",
+    "js:compile": "npx babel js/main.js --out-file js/main-compiled.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.24.9",
+    "@babel/plugin-transform-arrow-functions": "^7.24.7",
+    "@babel/preset-env": "^7.25.0"
+  }
+}
