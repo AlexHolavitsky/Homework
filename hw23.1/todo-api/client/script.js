@@ -1,7 +1,9 @@
+
 const API_URL = 'http://localhost:3000/api/todos';
 
-document.getElementById('todo-form').addEventListener('submit', async (e) => {
+document.getElementById('addButton').addEventListener('click', async (e) => {
   e.preventDefault();
+ 
   const task = document.getElementById('todo-input').value;
   const response = await fetch(API_URL, {
     method: 'POST',
@@ -24,46 +26,52 @@ async function fetchTodos() {
 function appendTodoToList(todo) {
   const todoList = document.getElementById('todo-list');
   const li = document.createElement('li');
-  li.textContent = todo.task;
+  li.className = 'list-group-item todo-item ';
   li.dataset.id = todo.id;
+
+ 
+  const spanSpan = document.createElement('span');
+  spanSpan.textContent = todo.task;
+  spanSpan.className = 'ml-5';
 
   const deleteButton = document.createElement('button');
   deleteButton.textContent = 'Delete';
+  deleteButton.className = 'btn btn-danger'
   deleteButton.addEventListener('click', async (e) => {
-    e.stopPropagation(); // Запобігає спливанню події на батьківський елемент
+    e.stopPropagation(); 
     const todoId = todo.id;
     await fetch(`${API_URL}/${todoId}`, { method: 'DELETE' });
     li.remove();
   });
 
   li.addEventListener('click', (e) => {
-    if (e.target !== deleteButton) { // Перевірка, що клік не був на кнопці "Delete"
+    if (e.target !== deleteButton) { 
       openModal(todo.task);
     }
   });
 
-  li.appendChild(deleteButton);
+ 
+  li.appendChild(deleteButton); 
+  li.appendChild(spanSpan); 
   todoList.appendChild(li);
 }
 
-function openModal(taskContent) {
-  const modal = document.getElementById('taskModal');
-  const modalTaskContent = document.getElementById('modal-task-content');
-  modalTaskContent.textContent = taskContent;
-  modal.style.display = 'block';
-}
+$(document).on('click', '.todo-item', function() {
+        currentItem = $(this);
+        const taskText = $(this).text();
+        $('#todoModalBody').text(taskText);
+        $('#todoModal').modal('show');
+});
 
-const modal = document.getElementById('taskModal');
-const span = document.getElementsByClassName('close')[0];
-
-span.onclick = function() {
-  modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-}
+  $('#deleteButton').click(function() {
+          currentItem.remove();
+          $('#todoModal').modal('hide');
+  });
 
 fetchTodos();
+
+
+
+
+
+
