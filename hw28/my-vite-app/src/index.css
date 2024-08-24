@@ -1,0 +1,31 @@
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+
+  background-color: darkslategray;
+  color: white;
+}
+
+.menu{
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  background-color: lavender;
+
+}
+
+.inner{
+  margin-left: 50px
+}
+
+.ulInner{
+margin: 10px 0;
+}
+
+/* .container{
+padding: 0 0px;
+} */
+
