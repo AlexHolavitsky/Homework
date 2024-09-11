@@ -1,7 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { loadTodosSuccess, loadTodosFailure, LOAD_TODOS } from './todoActions';
 
-
 function* loadTodos() {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
   yield put({ type: 'LOAD_TODOS_SUCCESS', payload: todos });
@@ -51,6 +50,12 @@ export function* todoSaga() {
   yield takeEvery('EDIT_TODO', editTodoSaga);
   yield takeEvery('CLEAR_TODOS', clearTodosSaga);
 }
+
+
+
+
+
+
 
 
 function* loadTodosSaga() {

@@ -17,16 +17,16 @@
 //   payload: error,
 // });
 
-// src/store/todoActions.js
+
 export const LOAD_TODOS = 'LOAD_TODOS';
 export const LOAD_TODOS_SUCCESS = 'LOAD_TODOS_SUCCESS';
 export const LOAD_TODOS_FAILURE = 'LOAD_TODOS_FAILURE';
 export const ADD_TODO = 'ADD_TODO';
 export const ADD_TODO_SUCCESS = 'ADD_TODO_SUCCESS';
 export const ADD_TODO_FAILURE = 'ADD_TODO_FAILURE';
-// Інші дії...
 
-// Action creators
+
+
 export const loadTodos = () => ({
   type: LOAD_TODOS,
 });
@@ -56,4 +56,4 @@ export const addTodoFailure = (error) => ({
   payload: error,
 });
 
-// Інші action creators...
+
