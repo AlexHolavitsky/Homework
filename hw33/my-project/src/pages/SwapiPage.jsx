@@ -279,7 +279,7 @@ const SwapiPage = () => {
         color="primary"
         style={{ marginBottom: '16px' }}
       >
-        Fetch Data
+        Добавить
       </Button>
 
       {dataList.map((data, index) => (
